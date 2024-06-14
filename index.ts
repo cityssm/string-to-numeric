@@ -4,6 +4,10 @@ export interface ParsingOptions {
   decimalSeparator: DecimalSeparator
 }
 
+/**
+ * Retrieves the computer's locale decimal separator.
+ * @returns Either "." or ",".
+ */
 export function getLocaleDecimalSeparator(): DecimalSeparator {
   return (1.1).toLocaleString().charAt(1) as DecimalSeparator
 }
@@ -12,6 +16,12 @@ export const defaultParsingOptions: ParsingOptions = {
   decimalSeparator: getLocaleDecimalSeparator()
 }
 
+/**
+ * Converts a string into a number.
+ * @param numericString - A string representing a number.
+ * @param userParsingOptions - Optional parameters.
+ * @returns A numeric representation of the given string.
+ */
 export default function parseNumeric(
   numericString: string,
   userParsingOptions?: Partial<ParsingOptions>

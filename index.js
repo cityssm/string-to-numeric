@@ -1,9 +1,19 @@
+/**
+ * Retrieves the computer's locale decimal separator.
+ * @returns Either "." or ",".
+ */
 export function getLocaleDecimalSeparator() {
     return (1.1).toLocaleString().charAt(1);
 }
 export const defaultParsingOptions = {
     decimalSeparator: getLocaleDecimalSeparator()
 };
+/**
+ * Converts a string into a number.
+ * @param numericString - A string representing a number.
+ * @param userParsingOptions - Optional parameters.
+ * @returns A numeric representation of the given string.
+ */
 export default function parseNumeric(numericString, userParsingOptions) {
     const options = Object.assign({}, defaultParsingOptions, userParsingOptions);
     let finalMultiplier = 1;
