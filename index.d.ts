@@ -8,6 +8,6 @@ export interface ParsingOptions {
  */
 export declare function getLocaleDecimalSeparator(): DecimalSeparator;
 export declare const defaultParsingOptions: ParsingOptions;
-export declare function parseNumeric(numericString: undefined | null): undefined;
-export declare function parseNumeric(numericString: string): number;
+export declare function parseNumeric(numericString: undefined | null, userParsingOptions?: Partial<ParsingOptions>): undefined;
+export declare function parseNumeric(numericString: string, userParsingOptions?: Partial<ParsingOptions>): number;
 export default parseNumeric;

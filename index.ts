@@ -16,8 +16,8 @@ export const defaultParsingOptions: ParsingOptions = {
   decimalSeparator: getLocaleDecimalSeparator()
 }
 
-export function parseNumeric(numericString: undefined | null): undefined
-export function parseNumeric(numericString: string): number
+export function parseNumeric(numericString: undefined | null, userParsingOptions?: Partial<ParsingOptions>): undefined
+export function parseNumeric(numericString: string, userParsingOptions?: Partial<ParsingOptions>): number
 
 /**
  * Converts a string into a number.
