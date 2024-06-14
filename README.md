@@ -1,5 +1,9 @@
 # String to Numeric
 
+[![DeepSource](https://app.deepsource.com/gh/cityssm/string-to-numeric.svg/?label=active+issues&show_trend=true&token=rG6OhTeMrjbjhlPrScSXEKEL)](https://app.deepsource.com/gh/cityssm/string-to-numeric/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7cb058ead328616dc6e2/maintainability)](https://codeclimate.com/github/cityssm/string-to-numeric/maintainability)
+[![codecov](https://codecov.io/gh/cityssm/string-to-numeric/graph/badge.svg?token=UGLDLEM3AW)](https://codecov.io/gh/cityssm/string-to-numeric)
+
 **Parses formatted number strings into numbers.**
 
 Supports formatted numbers that are not supported by Javascript's `parseInt()` and `parseFloat()` functions, including:
