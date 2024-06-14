@@ -34,7 +34,7 @@ export default function parseNumeric(numericString, userParsingOptions) {
             break;
         }
         else {
-            if (processingString.charAt(0) === '-') {
+            if (processingString.startsWith('-')) {
                 finalMultiplier = -1;
             }
             processingString = processingString.slice(1);

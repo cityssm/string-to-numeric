@@ -54,7 +54,7 @@ export default function parseNumeric(
     if ('0123456789'.includes(processingString.charAt(0))) {
       break
     } else {
-      if (processingString.charAt(0) === '-') {
+      if (processingString.startsWith('-')) {
         finalMultiplier = -1
       }
 
