@@ -13,13 +13,21 @@ await describe('string-to-numeric', async () => {
         }), 1234.1);
     });
     await it('Converts strings with leading units into numeric values', async () => {
-        assert.strictEqual(stringToNumeric("$2"), 2);
-        assert.strictEqual(stringToNumeric("# 456"), 456);
-        assert.strictEqual(stringToNumeric("$58,742.200"), 58_742.2);
+        assert.strictEqual(stringToNumeric('$2'), 2);
+        assert.strictEqual(stringToNumeric('# 456'), 456);
+        assert.strictEqual(stringToNumeric('$58,742.200'), 58_742.2);
     });
     await it('Converts strings with negative indicators into numeric values', async () => {
-        assert.strictEqual(stringToNumeric("-2"), -2);
-        assert.strictEqual(stringToNumeric("(4.2)"), -4.2);
-        assert.strictEqual(stringToNumeric("($4.000)"), -4);
+        assert.strictEqual(stringToNumeric('-2'), -2);
+        assert.strictEqual(stringToNumeric('(4.2)'), -4.2);
+        assert.strictEqual(stringToNumeric('($4.000)'), -4);
+    });
+    await it('Handles errors', async () => {
+        // eslint-disable-next-line unicorn/no-useless-undefined, @typescript-eslint/no-confusing-void-expression
+        assert.strictEqual(stringToNumeric(undefined), undefined);
+        // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression, unicorn/no-null
+        assert.strictEqual(stringToNumeric(null), undefined);
+        assert.strictEqual(stringToNumeric(''), Number.NaN);
+        assert.strictEqual(stringToNumeric('error'), Number.NaN);
     });
 });

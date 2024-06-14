@@ -16,16 +16,23 @@ export const defaultParsingOptions: ParsingOptions = {
   decimalSeparator: getLocaleDecimalSeparator()
 }
 
+export function parseNumeric(numericString: undefined | null): undefined
+export function parseNumeric(numericString: string): number
+
 /**
  * Converts a string into a number.
  * @param numericString - A string representing a number.
  * @param userParsingOptions - Optional parameters.
  * @returns A numeric representation of the given string.
  */
-export default function parseNumeric(
-  numericString: string,
+export function parseNumeric(
+  numericString: string | undefined | null,
   userParsingOptions?: Partial<ParsingOptions>
-): number {
+): number | undefined {
+  if (numericString === undefined || numericString === null) {
+    return undefined
+  }
+
   const options = Object.assign({}, defaultParsingOptions, userParsingOptions)
 
   let finalMultiplier = 1
@@ -74,3 +81,6 @@ export default function parseNumeric(
 
   return Number.parseFloat(processingString) * finalMultiplier
 }
+
+
+export default parseNumeric

@@ -8,11 +8,6 @@ export interface ParsingOptions {
  */
 export declare function getLocaleDecimalSeparator(): DecimalSeparator;
 export declare const defaultParsingOptions: ParsingOptions;
-/**
- * Converts a string into a number.
- * @param numericString - A string representing a number.
- * @param userParsingOptions - Optional parameters.
- * @returns A numeric representation of the given string.
- */
-export default function parseNumeric(numericString: string, userParsingOptions?: Partial<ParsingOptions>): number;
-export {};
+export declare function parseNumeric(numericString: undefined | null): undefined;
+export declare function parseNumeric(numericString: string): number;
+export default parseNumeric;

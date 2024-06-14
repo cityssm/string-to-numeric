@@ -14,7 +14,10 @@ export const defaultParsingOptions = {
  * @param userParsingOptions - Optional parameters.
  * @returns A numeric representation of the given string.
  */
-export default function parseNumeric(numericString, userParsingOptions) {
+export function parseNumeric(numericString, userParsingOptions) {
+    if (numericString === undefined || numericString === null) {
+        return undefined;
+    }
     const options = Object.assign({}, defaultParsingOptions, userParsingOptions);
     let finalMultiplier = 1;
     let processingString = (numericString ?? '').trim().toLowerCase();
@@ -52,3 +55,4 @@ export default function parseNumeric(numericString, userParsingOptions) {
     }
     return Number.parseFloat(processingString) * finalMultiplier;
 }
+export default parseNumeric;
