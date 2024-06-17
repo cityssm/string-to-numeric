@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/cityssm/string-to-numeric/graph/badge.svg?token=UGLDLEM3AW)](https://codecov.io/gh/cityssm/string-to-numeric)
 [![Coverage Testing](https://github.com/cityssm/string-to-numeric/actions/workflows/coverage.yml/badge.svg)](https://github.com/cityssm/string-to-numeric/actions/workflows/coverage.yml)
 
-**Parses formatted numeric strings into numbers.**
+**Parses formatted numeric strings into numbers. Handles cases `parseFloat()` misses.**
 
 Helpful when importing formatted data.
 

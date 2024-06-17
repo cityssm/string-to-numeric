@@ -2,7 +2,7 @@
   "name": "@cityssm/string-to-numeric",
   "version": "0.1.2",
   "type": "module",
-  "description": "Parses formatted numeric strings into numbers.",
+  "description": "Parses formatted numeric strings into numbers. Handles cases parseFloat() misses.",
   "exports": "./index.js",
   "scripts": {
     "test": "node --test",
