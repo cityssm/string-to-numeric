@@ -78,7 +78,7 @@ export function parseNumeric(
   while (processingString !== '') {
     if (
       numbers.includes(processingString.charAt(0)) ||
-      (processingString.charAt(0) === '.' &&
+      (processingString.startsWith('.') &&
         processingString.length > 1 &&
         numbers.includes(processingString.charAt(1)))
     ) {
