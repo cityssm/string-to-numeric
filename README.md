@@ -8,22 +8,20 @@
 
 **Parses formatted number strings into numbers.**
 
-Supports formatted numbers that are not supported by Javascript's `parseInt()` and `parseFloat()` functions, including:
+Helpful when importing formatted data.
 
-- Numbers with thousands separators.<br />
-  i.e. `"1,234.56" => 1234.56`
+![Screenshot of CSV File](docs/banner.png)
 
-- Numbers using a comma decimal separator.<br />
-  i.e. `"1,23" => 1.23`
+Supports formatted numeric strings that are not supported by Javascript's
+`parseInt()` and `parseFloat()` functions, including:
 
-- Numbers with surrounding brackets.<br />
-  i.e. `"(6000)" => -6000`
-
-- Numbers with leading units.<br />
-  i.e. `"$54.32" => 54.32`
-
-- Combinations of formatting.<br />
-  i.e. `"($65,432.10)" => -65432.1`
+| Formatting                                                              | Example          | `Number.parseFloat()` | String to Numeric |
+| ----------------------------------------------------------------------- | ---------------- | --------------------- | ----------------- |
+| Numbers with thousands separators                                       | `"1,234.56"`     | ❌ `1`                | ✔️ `1234.56`      |
+| Numbers with surrounding brackets<br /> (common in accounting)          | `"(6000)"`       | ❌ `NaN`              | ✔️ `-6000`        |
+| Numbers with leading units                                              | `"$54.32"`       | ❌ `NaN`              | ✔️ `54.32`        |
+| Numbers using a comma decimal separator<br /> (with optional parameter) | `"1,23"`         | ❌ `1`                | ✔️ `1.23`         |
+| Combinations of formatting                                              | `"($65,432.10)"` | ❌ `NaN`              | ✔️ `-65432.1`     |
 
 ## Installation
 

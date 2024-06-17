@@ -25,7 +25,15 @@ await describe('string-to-numeric', async () => {
 
     assert.strictEqual(stringToNumeric('# 456'), 456)
 
+    assert.strictEqual(stringToNumeric('No. 812'), 812)
+
     assert.strictEqual(stringToNumeric('$58,742.200'), 58_742.2)
+  })
+
+  await it('Converts strings with trailing units into numeric values', async () => {
+    assert.strictEqual(stringToNumeric('99 red balloons'), 99)
+
+    assert.strictEqual(stringToNumeric('100mm'), 100)
   })
 
   await it('Converts strings with negative indicators into numeric values', async () => {
