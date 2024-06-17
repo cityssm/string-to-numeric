@@ -1,5 +1,7 @@
 type DecimalSeparator = '.' | ','
 
+const numbers = '0123456789'
+
 export interface ParsingOptions {
   decimalSeparator: DecimalSeparator
 }
@@ -16,8 +18,14 @@ export const defaultParsingOptions: ParsingOptions = {
   decimalSeparator: getLocaleDecimalSeparator()
 }
 
-export function parseNumeric(numericString: undefined | null, userParsingOptions?: Partial<ParsingOptions>): undefined
-export function parseNumeric(numericString: string, userParsingOptions?: Partial<ParsingOptions>): number
+export function parseNumeric(
+  numericString: undefined | null,
+  userParsingOptions?: Partial<ParsingOptions>
+): undefined
+export function parseNumeric(
+  numericString: string,
+  userParsingOptions?: Partial<ParsingOptions>
+): number
 
 /**
  * Converts a string into a number.
@@ -68,7 +76,12 @@ export function parseNumeric(
    */
 
   while (processingString !== '') {
-    if ('0123456789'.includes(processingString.charAt(0))) {
+    if (
+      numbers.includes(processingString.charAt(0)) ||
+      (processingString.charAt(0) === '.' &&
+        processingString.length > 1 &&
+        numbers.includes(processingString.charAt(1)))
+    ) {
       break
     } else {
       if (processingString.startsWith('-')) {
@@ -81,6 +94,5 @@ export function parseNumeric(
 
   return Number.parseFloat(processingString) * finalMultiplier
 }
-
 
 export default parseNumeric

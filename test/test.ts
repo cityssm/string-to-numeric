@@ -20,6 +20,12 @@ await describe('string-to-numeric', async () => {
     )
   })
 
+  await it('Converts strings with leading decimal into numeric values', async () => {
+    assert.strictEqual(stringToNumeric('.2'), 0.2)
+
+    assert.strictEqual(stringToNumeric(',3', {decimalSeparator: ','}), 0.3)
+  })
+
   await it('Converts strings with leading units into numeric values', async () => {
     assert.strictEqual(stringToNumeric('$2'), 2)
 

@@ -1,3 +1,4 @@
+const numbers = '0123456789';
 /**
  * Retrieves the computer's locale decimal separator.
  * @returns Either "." or ",".
@@ -43,7 +44,10 @@ export function parseNumeric(numericString, userParsingOptions) {
      * Remove any leading units
      */
     while (processingString !== '') {
-        if ('0123456789'.includes(processingString.charAt(0))) {
+        if (numbers.includes(processingString.charAt(0)) ||
+            (processingString.charAt(0) === '.' &&
+                processingString.length > 1 &&
+                numbers.includes(processingString.charAt(1)))) {
             break;
         }
         else {
