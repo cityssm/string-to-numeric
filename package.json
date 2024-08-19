@@ -26,7 +26,7 @@
   "homepage": "https://github.com/cityssm/string-to-numeric#readme",
   "devDependencies": {
     "@types/node": "^20.14.2",
-    "eslint-config-cityssm": "^5.0.0",
+    "eslint-config-cityssm": "^6.0.0",
     "prettier-config-cityssm": "^1.0.0"
   }
 }
