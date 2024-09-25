@@ -10,6 +10,7 @@ await describe('string-to-numeric', async () => {
   await it('Converts simple strings into numeric values', () => {
     assert.strictEqual(stringToNumeric('33'), 33)
     assert.strictEqual(stringToNumeric('1.1'), 1.1)
+    assert.strictEqual(stringToNumeric('5e+2'), 500)
   })
 
   await it('Converts strings with thousands separators into numeric values', () => {
