@@ -1,3 +1,6 @@
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+
 type DecimalSeparator = '.' | ','
 
 const numbers = '0123456789'
@@ -41,11 +44,11 @@ export function parseNumeric(
     return undefined
   }
 
-  const options = Object.assign({}, defaultParsingOptions, userParsingOptions)
+  const options = { ...defaultParsingOptions, ...userParsingOptions}
 
   let finalMultiplier = 1
 
-  let processingString = (numericString ?? '').trim().toLowerCase()
+  let processingString = numericString.trim().toLowerCase()
 
   /*
    * Remove thousands separators

@@ -1,3 +1,5 @@
+/* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 const numbers = '0123456789';
 /**
  * Retrieves the computer's locale decimal separator.
@@ -19,9 +21,9 @@ export function parseNumeric(numericString, userParsingOptions) {
     if (numericString === undefined || numericString === null) {
         return undefined;
     }
-    const options = Object.assign({}, defaultParsingOptions, userParsingOptions);
+    const options = { ...defaultParsingOptions, ...userParsingOptions };
     let finalMultiplier = 1;
-    let processingString = (numericString ?? '').trim().toLowerCase();
+    let processingString = numericString.trim().toLowerCase();
     /*
      * Remove thousands separators
      */
