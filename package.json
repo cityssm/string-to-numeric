@@ -1,6 +1,6 @@
 {
   "name": "@cityssm/string-to-numeric",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "Parses formatted numeric strings into numbers. Handles cases parseFloat() misses.",
   "exports": "./index.js",
