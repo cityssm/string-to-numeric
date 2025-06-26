@@ -1,7 +1,7 @@
 /* eslint-disable @eslint-community/eslint-comments/disable-enable-pair */
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 
-type DecimalSeparator = '.' | ','
+type DecimalSeparator = ',' | '.'
 
 const numbers = '0123456789'
 
@@ -14,6 +14,7 @@ export interface ParsingOptions {
  * @returns Either "." or ",".
  */
 export function getLocaleDecimalSeparator(): DecimalSeparator {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
   return (1.1).toLocaleString().charAt(1) as DecimalSeparator
 }
 
@@ -22,9 +23,10 @@ export const defaultParsingOptions: ParsingOptions = {
 }
 
 export function parseNumeric(
-  numericString: undefined | null,
+  numericString: null | undefined,
   userParsingOptions?: Partial<ParsingOptions>
 ): undefined
+
 export function parseNumeric(
   numericString: string,
   userParsingOptions?: Partial<ParsingOptions>
@@ -37,14 +39,14 @@ export function parseNumeric(
  * @returns A numeric representation of the given string.
  */
 export function parseNumeric(
-  numericString: string | undefined | null,
+  numericString: string | null | undefined,
   userParsingOptions?: Partial<ParsingOptions>
 ): number | undefined {
   if (numericString === undefined || numericString === null) {
     return undefined
   }
 
-  const options = { ...defaultParsingOptions, ...userParsingOptions}
+  const options = { ...defaultParsingOptions, ...userParsingOptions }
 
   let finalMultiplier = 1
 

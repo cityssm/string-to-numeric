@@ -6,6 +6,7 @@ const numbers = '0123456789';
  * @returns Either "." or ",".
  */
 export function getLocaleDecimalSeparator() {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     return (1.1).toLocaleString().charAt(1);
 }
 export const defaultParsingOptions = {

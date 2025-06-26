@@ -2,7 +2,6 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/@cityssm/string-to-numeric)](https://www.npmjs.com/package/@cityssm/string-to-numeric)
 [![DeepSource](https://app.deepsource.com/gh/cityssm/string-to-numeric.svg/?label=active+issues&show_trend=true&token=rG6OhTeMrjbjhlPrScSXEKEL)](https://app.deepsource.com/gh/cityssm/string-to-numeric/)
-[![Maintainability](https://api.codeclimate.com/v1/badges/7cb058ead328616dc6e2/maintainability)](https://codeclimate.com/github/cityssm/string-to-numeric/maintainability)
 [![codecov](https://codecov.io/gh/cityssm/string-to-numeric/graph/badge.svg?token=UGLDLEM3AW)](https://codecov.io/gh/cityssm/string-to-numeric)
 [![Coverage Testing](https://github.com/cityssm/string-to-numeric/actions/workflows/coverage.yml/badge.svg)](https://github.com/cityssm/string-to-numeric/actions/workflows/coverage.yml)
 
